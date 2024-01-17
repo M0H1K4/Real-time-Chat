@@ -4,10 +4,20 @@ import FreePage from "./freePage";
 
 
 export default function SignUp() {
+
+  const username = "mohikan"
+  const password = "luka123"
+
   const [signUp, setSignUp] = useState()
 
-  if(password === "mohikan" && password === "luka123"){
-    
+  const newDiv = () =>{
+    <div>
+      it is workig bro
+    </div>
+  }
+
+  if(username === "mohikan" && password === "luka123"){
+
   }
 
   return (
@@ -17,7 +27,8 @@ export default function SignUp() {
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
-       
+            username={username}
+            password={password}
             type="text"
             id="username"
             name="username"
