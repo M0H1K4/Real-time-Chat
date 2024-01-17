@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import NewPage from "./newPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter  as Router, Route, Routes } from "react-router-dom";
 import SocialAcc from "./socialAcc";
 
 export default function SignUp() {
@@ -11,7 +11,7 @@ export default function SignUp() {
   const newDiv = () => {
     if (username === "mohikan" && password === "luka123") {
       // Redirect to the new page
-      window.location.href = "/newPage";
+      window.location.href = "#/newPage";
     } else {
       console.log("there is something wrong");
     }
@@ -50,7 +50,7 @@ export default function SignUp() {
                 </div>
                 <span className="forgot-password">
                   <a
-                    href="https://www.youtube.com/watch?v=vIklNRKQ1l0"
+                    href="#https://www.youtube.com/watch?v=vIklNRKQ1l0"
                     target="_blank"
                   >
                     Forgot Password ?
