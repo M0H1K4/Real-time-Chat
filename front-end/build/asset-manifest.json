@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/M0H1K4/Real-time-Chat.git/static/css/main.a406b8d4.css",
+    "main.js": "/M0H1K4/Real-time-Chat.git/static/js/main.52b53901.js",
+    "static/js/787.498e3191.chunk.js": "/M0H1K4/Real-time-Chat.git/static/js/787.498e3191.chunk.js",
+    "index.html": "/M0H1K4/Real-time-Chat.git/index.html",
+    "main.a406b8d4.css.map": "/M0H1K4/Real-time-Chat.git/static/css/main.a406b8d4.css.map",
+    "main.52b53901.js.map": "/M0H1K4/Real-time-Chat.git/static/js/main.52b53901.js.map",
+    "787.498e3191.chunk.js.map": "/M0H1K4/Real-time-Chat.git/static/js/787.498e3191.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a406b8d4.css",
+    "static/js/main.52b53901.js"
+  ]
+}
