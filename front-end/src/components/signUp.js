@@ -54,10 +54,7 @@ export default function SignUp() {
             </div>
           }
         />
-        <Route>
-          path= "/newPage"
-          element = { <NewPage/> }
-        </Route>
+        <Route path="/newPage" element={<NewPage />} />
       </Routes>
     </Router>
   );
