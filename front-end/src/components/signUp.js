@@ -6,6 +6,10 @@ import FreePage from "./freePage";
 export default function SignUp() {
   const [signUp, setSignUp] = useState()
 
+  if(password === "mohikan" && password === "luka123"){
+    
+  }
+
   return (
     <div className="app-container"> 
       <h1>Chat App</h1>
