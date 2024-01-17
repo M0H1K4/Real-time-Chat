@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import NewPage from "./newPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SocialAcc from "./socialAcc";
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -23,11 +24,11 @@ export default function SignUp() {
           path="/"
           element={
             <div className="app-container">
-              <h1>Chat App</h1>
-              <form className="app-form">
+              <h1 className="heading">Chat App</h1>
+              <form className="form">
                 <div className="form-group">
-                  <label htmlFor="username">Username:</label>
                   <input
+                    className="input"
                     value={username}
                     type="text"
                     id="username"
@@ -37,8 +38,8 @@ export default function SignUp() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="password">Password:</label>
                   <input
+                    className="input"
                     value={password}
                     type="password"
                     id="password"
@@ -47,10 +48,19 @@ export default function SignUp() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
+                <span className="forgot-password">
+                  <a
+                    href="https://www.youtube.com/watch?v=vIklNRKQ1l0"
+                    target="_blank"
+                  >
+                    Forgot Password ?
+                  </a>
+                </span>
                 <button type="button" className="app-btn" onClick={newDiv}>
                   Login
                 </button>
               </form>
+              <SocialAcc />
             </div>
           }
         />
