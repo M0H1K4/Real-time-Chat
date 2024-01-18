@@ -53,7 +53,7 @@ export default function SignUp() {
                     href="#https://www.youtube.com/watch?v=vIklNRKQ1l0"
                     target="_blank"
                   >
-                    Forgot Password?
+                    Forgot Password?  no
                   </a>
                 </span>
                 <button type="button" className="app-btn" onClick={newDiv}>
