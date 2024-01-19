@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 export default function toggleSwich() {
+  const [night, setNight] = useState();
+
   return (
     <div>
       <label className="theme-switch">

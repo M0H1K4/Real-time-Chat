@@ -4,10 +4,7 @@ import ToggleSwich from "./toggleSwich";
 export default function newPage() {
   return (
     <div>
-      <form>
-        <h1>This is new page and succesfully working</h1>
-      </form>
-      <ToggleSwich />
+      <h1>This is working page</h1>
     </div>
   );
 }
