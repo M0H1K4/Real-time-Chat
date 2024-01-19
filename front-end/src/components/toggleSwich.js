@@ -1,13 +1,38 @@
 import React from "react";
 import { useState } from "react";
 
-export default function toggleSwich() {
-  const [night, setNight] = useState();
+export default function ToggleSwich() {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    const body = document.querySelector("body");
+    setChecked(!checked);
+
+    // if (!checked) {
+    //   body.style.backgroundColor = "black";
+    // } else {
+    //   body.style.backgroundColor = "#f4f4f4";
+    // }
+    if (checked) {
+        // Change to light mode
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+      } else {
+        // Change to dark mode
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+      }
+  };
 
   return (
     <div>
       <label className="theme-switch">
-        <input type="checkbox" className="theme-switch__checkbox" />
+        <input
+          type="checkbox"
+          className="theme-switch__checkbox"
+          checked={checked}
+          onChange={handleChange}
+        />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds"></div>
           <div className="theme-switch__stars-container">

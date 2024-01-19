@@ -8,6 +8,94 @@ body {
   margin: 0;
   background-color: #f4f4f4;
 }
+body {
+  transition: background-color 0.5s ease;
+}
+
+body.light-mode {
+  background-color: #fff; /* Light mode background color */
+}
+
+body.dark-mode {
+  background-color: #1a1a1a; /* Dark mode background color */
+}
+
+/* css for light mode  */
+
+/* Dark mode styles */
+body.dark-mode .app-container {
+  background-color: #1a1a1a;
+  color: #ccc;
+  border-color: #1a1a1a;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+}
+
+body.dark-mode .heading {
+  color: #55aaff;
+}
+
+body.dark-mode .form .input {
+  background: #333;
+  box-shadow: #555 0px 10px 10px -5px;
+  border-color: transparent;
+}
+
+body.dark-mode .form .input::-moz-placeholder,
+body.dark-mode .form .input::placeholder {
+  color: #555;
+}
+
+body.dark-mode .form .input:focus {
+  border-color: #12b1d1;
+}
+
+body.dark-mode .form-group label {
+  color: #888;
+}
+
+body.dark-mode .form-group input {
+  border-color: #555;
+}
+
+body.dark-mode .form .app-btn {
+  background: linear-gradient(45deg, #444 0%, #666 100%);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  color: white;
+}
+
+body.dark-mode .form .forgot-password a {
+  color: #55aaff;
+}
+
+body.dark-mode .social-account-container .title {
+  color: #888;
+}
+
+body.dark-mode .social-account-container .social-accounts .social-button {
+  background: linear-gradient(45deg, #000 0%, #444 100%);
+  border-color: #555;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+}
+
+body.dark-mode .social-account-container .social-accounts .social-button .svg {
+  fill: white;
+}
+
+body.dark-mode .social-account-container .social-accounts .social-button:hover {
+  transform: scale(1.2);
+}
+
+body.dark-mode
+  .social-account-container
+  .social-accounts
+  .social-button:active {
+  transform: scale(0.9);
+}
+
+body.dark-mode .agreement a {
+  color: #55aaff;
+}
+/* Dark mode styles */
 
 .app-container {
   width: 300px;
