@@ -1,9 +1,20 @@
 const express = require("express");
 
+const mongoose = require("mongoose");
 const app = express();
 const PORT = 3000;
 
-const connectDb = require("./config/connectdb.js");
+const uri = 'mongodb+srv://Mohikan:<luka123>@cluster1.juf2fhu.mongodb.net/?retryWrites=true&w=majority'
+ 
+
+async function connect() {
+  try{
+    await mongoose.connect(uri)
+    console.log('connected to DB')
+  } catch(err){
+
+  }
+}
 
 app
   .get("/", (req, res) => {
@@ -11,6 +22,5 @@ app
   })
   .listen(PORT);
 
-app.post("/post", (req, res) => {});
 
-connectDb();
+
