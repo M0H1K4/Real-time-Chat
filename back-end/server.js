@@ -8,16 +8,9 @@ const { Schema } = mongoose;
 
 
 const blogSchema = new Schema({
-  title: String, // String is shorthand for {type: String}
-  author: String,
+  name: String, // String is shorthand for {type: String}
+  secondName: String,
   body: String,
-  comments: [{ body: String, date: Date }],
-  date: { type: Date, default: Date.now },
-  hidden: Boolean,
-  meta: {
-    votes: Number,
-    favs: Number
-  }
 });
 
 async function connect() {
@@ -34,6 +27,14 @@ app
     res.end("Hello, world!");
   })
   .listen(PORT);
+
+
+app.post("/", (req, res) => {
+  
+})
+
+
+
 
   connect();
 
