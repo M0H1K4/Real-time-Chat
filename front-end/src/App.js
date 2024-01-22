@@ -8,7 +8,6 @@ function App() {
     <>
       <SignUp />
       <ToggleSwich />
-      <h1></h1>
     </>
   );
 }
