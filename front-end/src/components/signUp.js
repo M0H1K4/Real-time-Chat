@@ -1,71 +1,82 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import NewPage from "./newPage";
-import { HashRouter  as Router, Route, Routes } from "react-router-dom";
 import SocialAcc from "./socialAcc";
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const newDiv = () => {
-    if (username === "mohikan" && password === "luka123") {
-      // Redirect to the new page
-      window.location.href = "#/newPage";
-    } else {
-      console.log("there is something wrong");
+  const handleRegistration = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/users/newUser", {
+        username,
+        email,
+        password,
+      });
+
+      console.log(response.data);
+
+      if (response.status === 201) {
+        navigate("/newPage");
+      }
+    } catch (error) {
+      console.error("Error During Registration", error.response?.data);
     }
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="app-container">
-              <h1 className="heading">Chat App</h1>
-              <form className="form">
-                <div className="form-group">
-                  <input
-                    className="input"
-                    value={username}
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className="input"
-                    value={password}
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <span className="forgot-password">
-                  <a
-                    href="#https://www.youtube.com/watch?v=vIklNRKQ1l0"
-                    target="_blank"
-                  >
-                    Forgot Passwordd?
-                  </a>
-                </span>
-                <button type="button" className="app-btn" onClick={newDiv}>
-                  Login
-                </button>
-              </form>
-              <SocialAcc />
-            </div>
-          }
-        />
-        <Route path="/newPage" element={<NewPage />} />
-      </Routes>
-    </Router>
+    <div className="app-container">
+      <h1 className="heading">Chat App</h1>
+      <form className="form">
+        <div className="form-group">
+          <input
+            className="input"
+            value={username}
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            className="input"
+            value={email}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            className="input"
+            value={password}
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <span className="forgot-password">
+          <a href="" target="_blank">
+            Forgot Passwordd?
+          </a>
+        </span>
+
+        <button type="button" className="app-btn" onClick={handleRegistration}>
+          Register
+        </button>
+      </form>
+      <SocialAcc />
+    </div>
   );
 }
