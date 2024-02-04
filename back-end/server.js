@@ -5,14 +5,16 @@ const app = express();
 const PORT = 3000;
 const URL = "mongodb+srv://Mohikan:luka123@cluster1.juf2fhu.mongodb.net/?retryWrites=true&w=majority";
 const bodyParser = require("body-parser");
+const bcrypt = require("bcrypt");
 
 // Parse incoming JSON requests
 app.use(bodyParser.json());
 
 // MongoDB Schema Declaration
 const userSchema = new Schema({
-  name: String,
+  username: String,
   email: String,
+  password: String,
 });
 
 // MongoDB Model based on the schema
@@ -37,14 +39,16 @@ app.get("/users", async (req, res) => {
 });
 
 app.post("/users/newUser", async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
 
-  if (!name || !email) {
+  if (!name || !email || !password) {
     return res.status(400).json({ error: "Name and email are required" });
   }
 
   try {
-    const newUser = await User.create({ name, email });
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    const newUser = await User.create({ name, email, password:hashedPassword });
     res.status(201).json(newUser);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
