@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import NewPage from "./newPage";
 import SocialAcc from "./socialAcc";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -71,6 +71,9 @@ export default function SignUp() {
             Forgot Passwordd?
           </a>
         </span>
+        <div>
+          Already have an account? <Link to="/login">Login here</Link>
+        </div>
 
         <button type="button" className="app-btn" onClick={handleRegistration}>
           Register
